@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "airlinereviewapp"
+  },
+  "targets": {
+    "airlinereviewapp": {
+      "hosting": {
+        "AirlineReviewApp": [
+          "airlinereviewapp"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+
+<div class="border border-dark shadow-sm p-3 mb-5 bg-white rounded sky px-4 py-4" style="width: 70%; margin: auto">
+    <div class="text-center">
+        <h1>Welcome to Airline Report!</h1>
+        <br>
+        <p>Please fill out the form below to register for our app!</p>
+    </div>
+    <form id="signUp" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+        <div class="form-inline">
+            <label for="email">Email: </label>
+            <input type="email" class="form-control" id="email" formControlName="email" required>
+        </div>
+        <div *ngIf="submitted && signUpForm.controls['email'].errors" class="alert alert-danger">
+            <div *ngIf="signUpForm.controls['email'].errors?.['required']">
+                Email is required
+            </div>
+            <div *ngIf="signUpForm.controls['email'].errors?.['email']">
+                Invalid format
+            </div>
+        </div>
+        <br>
+        <div class="form-inline">
+            <label for="password" class="form-label">Password: </label>
+            <input type="password" class="form-control" name="password" formControlName="password" required>
+        </div>
+        <div *ngIf="submitted && signUpForm.controls['password'].errors" class="alert alert-danger">
+            <div *ngIf="signUpForm.controls['password'].errors?.['required']">
+                Password is required
+            </div>
+            <div *ngIf="signUpForm.controls['password'].errors?.['minlength']">
+                Password must be at least 6 characters
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Sign Up</button>
+        </div>
+        <br>
+        <div class="text-center">
+            <span>Already have an account with us? <a routerLink="/log-in" routerLinkActive="active">Log In</a></span>
+        </div>
+    </form>
+</div>

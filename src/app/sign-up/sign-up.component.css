@@ -1,0 +1,6 @@
+.sky {
+    display: block;
+    margin: auto;
+    width: 70%;
+    background-image: linear-gradient(to bottom left, white, cyan, white)
+}

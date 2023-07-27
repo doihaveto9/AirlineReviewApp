@@ -1,0 +1,68 @@
+
+<div class="border border-dark shadow-sm p-3 mb-5 bg-white rounded sky px-4 py-4" style="width: 70%; margin: auto">
+    <div class="text-center">
+        <h1>Enter Flight Data Below!</h1>
+        <br>
+        <p>Please fill out the form below to record necessary information!</p>
+    </div>
+    <form id="dataUp" [formGroup]="dataForm" (ngSubmit)="submitData()">
+            <div class="form-inline">
+                <label for="airline">Airline: </label>
+                <input type="airline" class="form-control" id="airline" formControlName="airline" required>
+            </div>
+            <div *ngIf="submitted && dataForm.controls['airline'].errors" class="alert alert-danger">
+                <div *ngIf="dataForm.controls['airline'].errors?.['required']">
+                    Airline is required
+                </div>
+            </div>
+        <br>
+            <div class="form-inline">
+                <label for="arrivalDate" class="form-label">Arrival Date: </label>
+                <input type="date" class="form-control" name="arrivalDate" formControlName="arrivalDate" required>
+            </div>
+            <div *ngIf="submitted && dataForm.controls['arrivalDate'].errors" class="alert alert-danger">
+                <div *ngIf="dataForm.controls['arrivalDate'].errors?.['required']">
+                    Arrival Date is required
+                </div>
+            </div>
+        <br>
+            <div class="form-inline">
+                <label for="arrivalTime" class="form-label">Arrival Time: </label>
+                <input type="time" class="form-control" name="arrivalTime" formControlName="arrivalTime" required>
+            </div>
+            <div *ngIf="submitted && dataForm.controls['arrivalTime'].errors" class="alert alert-danger">
+                <div *ngIf="dataForm.controls['arrivalTime'].errors?.['required']">
+                    Arrival Time is required
+                </div>
+            </div>
+        <br>
+            <div class="form-inline">
+                <label for="flightNumber" class="form-label">Flight Number: </label>
+                <input type="text" class="form-control" name="flightNumber" formControlName="flightNumber" required>
+            </div>
+            <div *ngIf="submitted && dataForm.controls['flightNumber'].errors" class="alert alert-danger">
+                <div *ngIf="dataForm.controls['flightNumber'].errors?.['required']">
+                    Flight Number is required
+                </div>
+            </div>
+        <br>
+            <div class="form-inline">
+                <label for="numOfGuests" class="form-label">Number of Guests: </label>
+                <input type="text" class="form-control" name="numOfGuests" formControlName="numOfGuests" required>
+            </div>
+            <div *ngIf="submitted && dataForm.controls['numOfGuests'].errors" class="alert alert-danger">
+                <div *ngIf="dataForm.controls['numOfGuests'].errors?.['required']">
+                    Number of Guests is required
+                </div>
+            </div>
+        <br>
+            <div class="form-inline">
+                <label for="comments" class="form-label">Comments: </label>
+                <input type="text" class="form-control" name="comments" formControlName="comments">
+            </div>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+            <button class="btn btn-primary" routerLink="/menu">Back</button>
+        </div>
+    </form>
+</div>

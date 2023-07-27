@@ -1,0 +1,12 @@
+<div class="border border-dark shadow-sm p-3 mb-5 bg-white rounded sky px-4 py-4">
+    <div class="text-center">
+        <h1>Welcome to Airline Report, {{this.id | lowercase}}</h1>
+        <br>
+        <p>Please Select an appropriate action from the options below!</p>
+        <div style="text-align: center">
+                <button class="btn btn-primary" routerLink="/data-form"> Record Flight Data </button>
+                <br>
+                <button class="btn btn-primary" (click)="logOut()"> Log Out </button>
+        </div>
+    </div>
+</div>

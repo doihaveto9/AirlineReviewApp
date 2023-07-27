@@ -1,0 +1,41 @@
+
+
+<div class="border border-dark shadow-sm p-3 mb-5 bg-white rounded sky px-4 py-4" style="width: 70%; margin: auto">
+    <div class="text-center">
+        <h1>Welcome to Airline Report!</h1>
+        <br>
+        <p>Please sign in below to use our app!</p>
+    </div>
+    <form id="login" [formGroup]="logInForm" (ngSubmit)="logIn()">
+        <div class="form-inline">
+            <label for="email">Email: </label>
+            <input type="email" class="form-control" id="email" formControlName="email" required>
+        </div>
+        <div *ngIf="submitted && logInForm.controls['email'].errors" class="alert alert-danger">
+            <div *ngIf="logInForm.controls['email'].errors?.['required']">
+                Email is required
+            </div>
+            <div *ngIf="logInForm.controls['email'].errors?.['email']">
+                Invalid format
+            </div>
+        </div>
+        <br>
+        <div class="form-inline">
+            <label for="password" class="form-label">Password: </label>
+            <input type="password" class="form-control" name="password" formControlName="password" required>
+        </div>
+        <div *ngIf="submitted && logInForm.controls['password'].errors" class="alert alert-danger">
+            <div *ngIf="logInForm.controls['password'].errors?.['required']">
+                Password is required
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <button class="btn btn-primary">Sign In</button>
+        </div>
+        <br>
+        <div class="text-center">
+            <span>Don't have an account with us? <a routerLink="/sign-up" routerLinkActive="active">Sign Up!</a></span>
+        </div>
+    </form>
+</div>

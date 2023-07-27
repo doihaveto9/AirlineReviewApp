@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* I was going to use this Typographica font, but it was missing some characters
+@font-face {
+    font-family: 'Typographica';
+    src: url('./assets/Typographica-Blp5.ttf')
+}
+*/
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/Raleway-VariableFont_wght.ttf')
+}
+
+*{
+    font-family: 'Raleway'
+}
+
+.sky {
+    display: block;
+    margin: auto;
+    width: 70%;
+    background-image: linear-gradient(to bottom left, white, cyan, white)
+}
+
+input{
+    font-family: 'Sans-Serif'
+}
+
+body{
+    background-image: url(./assets/SkyBackground.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px;
+}
+
+button{
+    padding: 0;
+    margin: 30px;
+    height: 60px;
+    width: 200px;
+    vertical-align: middle;
+}
